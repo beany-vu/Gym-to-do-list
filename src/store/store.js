@@ -10,6 +10,6 @@ const store = createStore(reducer, composeWithDevTools(applyMiddleware(epicMiddl
 const rootEpic = combineEpics(exercisesEpic);
 epicMiddleware.run(rootEpic);
 
-store.dispatch(loadExercises());
+store.dispatch(loadExercises(true));
 
 export default store;

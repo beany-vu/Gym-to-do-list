@@ -1,5 +1,5 @@
 import React from 'react';
-import TableRow from "./TableRow";
+import TableRow from './TableRow';
 
 // class TableRows extends React.Component {
 //     constructor(props) {
@@ -14,15 +14,13 @@ import TableRow from "./TableRow";
 //     }
 // }
 
-const TableRows = props => {
-    const {data} = props;
-    return(
-            <tbody>
-            {data.map((dataItem, index)=> {
-            return (<TableRow key={`table-data-${index}`} data={dataItem}/>)
-        })}
+const TableRows = (props) => {
+    const { data } = props;
+    return (
+        <tbody>
+            {data.map((dataItem, index) => (<TableRow key={`table-data-${index}`} data={dataItem} />))}
         </tbody>
     );
-}
+};
 
 export default TableRows;

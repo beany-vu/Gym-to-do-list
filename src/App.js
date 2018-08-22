@@ -41,9 +41,7 @@ const tableHeadings = ['name', 'category', 'equipment'];
 //
 // export default App;
 
-const App = props => {
-    return(
-        <Table tableHeadings={tableHeadings}></Table>
-    )
-}
+const App = () => (
+    <Table tableHeadings={tableHeadings} />
+);
 export default App;

@@ -26,14 +26,14 @@ const TableStyled = styled.table`
 //
 // export default Table;
 
-const Table = props => {
-    const {tableRows, tableHeadings} = props;
+const Table = (props) => {
+    const { tableRows, tableHeadings } = props;
     return (
         <TableStyled className="Table-workout">
             <TableHeadings data={tableHeadings} />
-            <TableRows data={tableRows}/>
+            <TableRows data={tableRows} />
         </TableStyled>
     );
-}
+};
 
 export default Table;

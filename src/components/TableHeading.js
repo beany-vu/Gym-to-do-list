@@ -12,9 +12,9 @@ import React from 'react';
 //     }
 // }
 
-const TableHeading = props => {
-    const {data} = props;
-    return(<th>{data}</th>);
-}
+const TableHeading = (props) => {
+    const { data } = props;
+    return (<th>{data}</th>);
+};
 
 export default TableHeading;

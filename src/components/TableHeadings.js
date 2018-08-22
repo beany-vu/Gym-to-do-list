@@ -1,5 +1,5 @@
 import React from 'react';
-import TableHeading from '../components/TableHeading';
+import TableHeading from './TableHeading';
 
 // class TableHeadings extends React.Component {
 //     constructor(props) {
@@ -15,15 +15,13 @@ import TableHeading from '../components/TableHeading';
 // }
 
 const TableHeadings = (props) => {
-    const {data} = props;
+    const { data } = props;
     return (
         <thead>
             <tr>
-                {data.map((dataItem, index) => {
-                    return (<TableHeading key={`table-heading-${index}`} data={dataItem}/>)
-                })}
+                {data.map((dataItem, index) => (<TableHeading key={`table-heading-${index}`} data={dataItem} />))}
             </tr>
         </thead>);
-}
+};
 
 export default TableHeadings;

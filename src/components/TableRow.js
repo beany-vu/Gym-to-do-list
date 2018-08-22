@@ -20,15 +20,15 @@ import React from 'react';
 //     }
 // }
 
-const TableRow = props => {
-    const {data} = props;
+const TableRow = (props) => {
+    const { data } = props;
     return (
         <tr>
             <td>{data.name}</td>
             <td>{data.category}</td>
             <td>{data.equipment}</td>
         </tr>
-    )
-}
+    );
+};
 
 export default TableRow;
