@@ -1,17 +1,17 @@
 import { createSelector } from 'reselect';
 import { getExerciseCategories } from './exerciseCategories';
+import { equipmentsSelector } from './equipments';
 
-// const exerciseCategories = exercisesCategoriesSelector;
-// console.log(exerciseCategories)
+
 export const getExercises = state => state.exercises;
-export const exercisesSelector = createSelector(getExercises, getExerciseCategories,
-    (exercises, cat) => exercises.map(r => {
-        if(cat !== undefined) {
-            console.log(cat.find(item => item.id === +r.category))
-            return {
-                ...r,
-                category: cat.find(item => item.id === +r.category).name,
-            };
-        }
-        return r;
-    }));
+export const exercisesSelector = createSelector(
+    getExercises,
+    getExerciseCategories,
+    equipmentsSelector,
+    (exercises, cat, equipments) => exercises.map(r => ({
+        ...r,
+        category: cat.length > 0 ? cat.find(item => item.id === +r.category).name : 'Loading',
+        equipment: (Object.keys(equipments).length > 0)
+            ? r.equipment.map(i => equipments[i].name).join(', ') : 'Loading',
+    })),
+);

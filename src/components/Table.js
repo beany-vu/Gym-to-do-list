@@ -4,7 +4,8 @@ import TableRows from './TableRows';
 import TableHeadings from './TableHeadings';
 
 const TableStyled = styled.table`
-    color: red;    
+    max-width: 700px;
+    width: 100%;    
 `;
 
 // class Table extends React.Component {

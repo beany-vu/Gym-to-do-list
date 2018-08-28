@@ -10,7 +10,7 @@ import {
 
 const exercisesEpic = actions$ => actions$.pipe(
     ofType(loadExercises),
-    mergeMap(() => ajax.getJSON('https://wger.de/api/v2/exercise?limit=100').pipe(
+    mergeMap(() => ajax.getJSON('https://wger.de/api/v2/exercise?limit=1000').pipe(
         map(response => exercisesLoaded([...response.results])),
         catchError(() => of(exercisesLoadError(true))),
     )),

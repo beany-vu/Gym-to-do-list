@@ -1,6 +1,8 @@
 import { of } from 'rxjs';
 import { ajax } from 'rxjs/ajax';
-import { mergeMap, map, catchError, delay } from 'rxjs/operators';
+import {
+    mergeMap, map, catchError, delay,
+} from 'rxjs/operators';
 import { ofType, combineEpics } from 'redux-observable';
 import {
     loadExerciseCategories,
@@ -12,7 +14,7 @@ const exerciseCategoriesEpic = actions$ => actions$.pipe(
     ofType(loadExerciseCategories),
 
     mergeMap(() => ajax.getJSON('https://wger.de/api/v2/exercisecategory?limit=1000').pipe(
-        delay(10000),
+        delay(2000),
         map(response => exerciseCategoriesLoaded([...response.results])),
         catchError(() => of(exerciseCategoriesLoadError(true))),
     )),
